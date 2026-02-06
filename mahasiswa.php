@@ -2,35 +2,26 @@
 
 class Mahasiswa
 {
+    // Menggunakan Constructor agar pengisian data lebih praktis
+    public function __construct(
+        public $nim,
+        public $nama,
+        public $prodi
+    ) {}
 
-    // property
-    public $nim;
-    public $nama;
-    public $prodi;
-
-    // method
+    // Method untuk menyapa
     public function sayHello()
     {
-        return "Hallo, nama saya " . $this->nama .
-            " dengan NIM " . $this->nim .
-            " saya adalah jurusan / prodi " . $this->prodi .
-            " program.";
+        return "Halo, nama saya <b>$this->nama</b> dengan NIM <b>$this->nim</b>. " .
+               "Saya dari prodi <b>$this->prodi</b>.";
     }
 }
 
-// object mahasiswa 1
-$mahasiswa1 = new Mahasiswa();
-$mahasiswa1->nim   = "T310001";
-$mahasiswa1->nama  = "Andi";
-$mahasiswa1->prodi = "Teknik Informatika";
+// Membuat object jadi lebih singkat (1 baris saja)
+$mahasiswa1 = new Mahasiswa("T310001", "Andi", "Teknik Informatika");
+$mahasiswa2 = new Mahasiswa("T310002", "Budi", "Sistem Informasi");
 
-// object mahasiswa 2
-$mahasiswa2 = new Mahasiswa();
-$mahasiswa2->nim   = "T310002";
-$mahasiswa2->nama  = "Budi";
-$mahasiswa2->prodi = "Sistem Informasi";
-
-echo "Daftar Mahasiswa <br>";
-echo "---------------- <br>";
+echo "<h3>Daftar Mahasiswa</h3>";
+echo "--------------------------<br>";
 echo $mahasiswa1->sayHello() . "<br>";
 echo $mahasiswa2->sayHello();
